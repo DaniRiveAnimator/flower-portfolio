@@ -19,6 +19,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 const MIN_VALUE = 0;
 const MAX_VALUE = 3;
 const CONTROL_COOLDOWN_MS = 350;
+const RIVE_SRC = `${import.meta.env.BASE_URL}flower.riv`;
 
 type SpringButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   label: string;
@@ -156,7 +157,7 @@ function App() {
   );
 
   const { rive, RiveComponent } = useRive({
-    src: "/flower.riv",
+    src: RIVE_SRC,
     artboard: "flower",
     stateMachines: "Interaction",
     autoplay: true,
