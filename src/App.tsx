@@ -111,9 +111,15 @@ function SpringButton({
   );
 }
 
-function LinkPill({ label }: { label: string }) {
+function LinkPill({ href, label }: { href: string; label: string }) {
   return (
-    <a className="footer-link" href="#" aria-label={`${label} link placeholder`}>
+    <a
+      className="footer-link"
+      href={href}
+      aria-label={`${label} profile`}
+      target="_blank"
+      rel="noreferrer"
+    >
       <svg
         aria-hidden="true"
         className="link-caret"
@@ -311,10 +317,19 @@ function App() {
           </p>
 
           <nav className="footer-links" aria-label="Portfolio links">
-            <LinkPill label="LinkedIn" />
-            <LinkPill label="X.com" />
-            <LinkPill label="Instagram" />
-            <LinkPill label="Youtube" />
+            <LinkPill
+              label="LinkedIn"
+              href="https://www.linkedin.com/in/daniyar-rive/"
+            />
+            <LinkPill label="X.com" href="https://x.com/DaniyarUI" />
+            <LinkPill
+              label="Instagram"
+              href="https://www.instagram.com/danivectorbender?igsh=MTd6cWh2bTZ3cXRoMw%3D%3D&utm_source=qr"
+            />
+            <LinkPill
+              label="Youtube"
+              href="https://www.youtube.com/@DaniBaianov"
+            />
           </nav>
         </div>
       </section>
